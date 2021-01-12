@@ -56,7 +56,8 @@ public abstract class Classifier {
     FLOAT_MOBILENET,
     QUANTIZED_MOBILENET,
     FLOAT_EFFICIENTNET,
-    QUANTIZED_EFFICIENTNET
+    QUANTIZED_EFFICIENTNET,
+    MY_MAHJONG_MOBILENET
   }
 
   /** The runtime device type used for executing classification. */
@@ -120,6 +121,8 @@ public abstract class Classifier {
       return new ClassifierFloatEfficientNet(activity, device, numThreads);
     } else if (model == Model.QUANTIZED_EFFICIENTNET) {
       return new ClassifierQuantizedEfficientNet(activity, device, numThreads);
+    } else if (model == Model.MY_MAHJONG_MOBILENET) {
+      return new ClassifierMyMahJongMobileNet(activity, device, numThreads);
     } else {
       throw new UnsupportedOperationException();
     }
